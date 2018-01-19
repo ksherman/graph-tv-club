@@ -1,0 +1,38 @@
+label {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  color: grey;
+  font-size: 1.5rem;
+}
+
+input {
+  display: block;
+  border: none;
+  border-bottom: 2px solid blue;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+
+  &:focus {
+    outline: none;
+    border-color: orange;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+textarea {
+  display: block;
+  border: none;
+  width: 100%;
+  font-size: 1.4rem;
+  border-bottom: 2px solid blue;
+
+  &:focus {
+    outline: none;
+    border-color: orange;
+  }
+}

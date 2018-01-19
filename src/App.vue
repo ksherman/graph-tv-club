@@ -1,23 +1,21 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="app-wrapper">
+    <TopBar />
     <router-view/>
   </div>
 </template>
 
 <script>
+import { TopBar } from '@/components/registry';
+
 export default {
   name: 'App',
+  components: {
+    TopBar,
+  },
 };
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" src="./style/main.scss">
+
 </style>
