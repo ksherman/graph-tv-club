@@ -18,11 +18,23 @@
         </template>
         <template v-else-if="getSearchResults">
           <div class="result" v-for="show in getSearchResults.Search" :key="`show-${show.imdbID}`">
-            <div class="result-image"><img :src="show.Poster"></div>
+            <div class="result-image">
+              <img
+                v-if="show.Poster !== 'N/A'"
+                :src="show.Poster"
+              />
+            </div>
             <div class="result-details">
               <div class="result-title">{{ show.Title }}</div>
               <div class="result-year">{{ show.Year }}</div>
-              <div class="result-view"><button class="button">View Show</button></div>
+              <div class="result-view">
+                <router-link
+                  tag="button"
+                  class="button"
+                  :to="{ name: 'show.details', params: { showId: show.imdbID } }">
+                  View Show
+                </router-link>
+              </div>
             </div>
           </div>
         </template>
