@@ -1,0 +1,9 @@
+.button {
+  padding: 1rem;
+  border: 1px solid $grey-light;
+  cursor: pointer;
+
+  &.wide {
+    padding: 1rem 2rem;
+  }
+}
