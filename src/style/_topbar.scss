@@ -1,7 +1,7 @@
 .topbar {
   &-wrapper {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     grid-gap: 2rem;
     background-color: $grey-dark;
@@ -46,17 +46,52 @@
       border-top: none;
 
       &.visible {
-        display: block;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
       }
 
-      .result {
-        padding: 1rem 0;
-        border-bottom: 1px solid $grey-light;
+      .no-result {
+        font-size: 2rem;
+      }
 
-        &:last-child {
-          border-bottom: none;
-        }
+      .results-actions {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
       }
     }
+  }
+}
+
+.result {
+  padding: 1rem 0;
+  border-bottom: 1px solid $grey-light;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &-image {
+    img {
+      width: 180px;
+    }
+  }
+
+  &-details {
+    padding: 1rem 2rem;
+  }
+
+  &-title {
+    font-size: 2rem;
+  }
+
+  &-year {
+    font-size: 1.6rem;
+  }
+
+  &-view {
+    padding-top: 3rem;
   }
 }

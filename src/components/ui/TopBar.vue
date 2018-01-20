@@ -9,22 +9,52 @@
         name="search-query"
         placeholder="search for a show..."
         v-model="searchQuery" />
-      <div class="search-query-results" :class="{ visible: searchQuery }">
-        <div class="result">Dope!</div>
-        <div class="result">Dope!</div>
-        <div class="result">Dope!</div>
+      <div
+        class="search-query-results"
+        :class="{ visible: searchQuery && (getSearchError || getSearchResults) }"
+      >
+        <template v-if="getSearchError">
+          <div class="no-result">{{ getSearchError }}</div>
+        </template>
+        <template v-else-if="getSearchResults">
+          <div class="result" v-for="show in getSearchResults.Search" :key="`show-${show.imdbID}`">
+            <div class="result-image"><img :src="show.Poster"></div>
+            <div class="result-details">
+              <div class="result-title">{{ show.Title }}</div>
+              <div class="result-year">{{ show.Year }}</div>
+              <div class="result-view"><button class="button">View Show</button></div>
+            </div>
+          </div>
+        </template>
+        <div class="results-actions text-right">
+          <button class="button wide">close</button>
+        </div>
       </div>
     </div>
+    <button class="button" @click="handleSearchQuery">
+      search
+    </button>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
   name: 'TopBar',
   data() {
     return {
       searchQuery: '',
     };
+  },
+  computed: {
+    ...mapGetters(['getSearchError', 'getSearchResults']),
+  },
+  methods: {
+    ...mapActions(['setSearchQuery']),
+    handleSearchQuery() {
+      this.setSearchQuery(this.searchQuery).then(response => console.log(response));
+    },
   },
 };
 </script>
