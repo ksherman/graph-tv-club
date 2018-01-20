@@ -9,4 +9,12 @@ export default {
   setSearchResults(state, payload) {
     state.search.results = payload;
   },
+  setShowDetails(state, payload) {
+    state.show.details = payload;
+  },
+  setShowSeason(state, payload) {
+    const seasons = state.show.seasons;
+    seasons.push(payload);
+    state.show.seasons = seasons;
+  },
 };

@@ -12,7 +12,7 @@ export default new Router({
       component: MainContent,
     },
     {
-      path: 'show/:showId',
+      path: '/show/:showId',
       component: ShowDetails,
       name: 'show.details',
     },
