@@ -8,3 +8,5 @@ export const TopBar = r => require.ensure([], () => r(require('@/components/ui/T
 export const MainContent = r => require.ensure([], () => r(require('@/components/MainContent')), 'MainContent');
 
 export const ShowDetails = r => require.ensure([], () => r(require('@/components/ShowDetails')), 'ShowDetails');
+export const ShowScatterPlot = r =>
+  require.ensure([], () => r(require('@/components/ShowScatterPlot')), 'ShowScatterPlot');
