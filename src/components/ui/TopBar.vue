@@ -8,6 +8,7 @@
         type="text"
         name="search-query"
         placeholder="search for a show..."
+        @keyup.enter="handleSearchQuery"
         v-model="searchQuery" />
       <div
         class="search-query-results"
