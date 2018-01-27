@@ -39,9 +39,6 @@
         </div>
       </div>
     </div>
-    <button class="button" @click="handleSearchQuery">
-      search
-    </button>
   </div>
 </template>
 
