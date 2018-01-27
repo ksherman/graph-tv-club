@@ -5,18 +5,19 @@
     align-items: center;
     grid-gap: 2rem;
     background-color: $grey-dark;
-    padding: 1rem 2rem;
   }
 
   &-title {
     h1 {
       margin: 0;
+      padding: 1rem 2rem;
       font-size: 1.75rem;
       color: white;
       font-weight: 600;
       font-family: Courier New, Courier, monospace;
 
       &:hover {
+        cursor: pointer;
         background-color: lighten($grey-dark, 20%);
       }
     }
@@ -24,6 +25,7 @@
 
   &-search {
     position: relative;
+    padding-left: 2rem;
 
     input {
       width: 100%;
