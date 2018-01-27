@@ -1,7 +1,7 @@
 .topbar {
   &-wrapper {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
     align-items: center;
     grid-gap: 2rem;
     background-color: $grey-dark;
@@ -24,6 +24,7 @@
 
   &-search {
     position: relative;
+
     input {
       width: 100%;
       color: white;
@@ -66,6 +67,7 @@
 
 .result {
   padding: 1rem 0;
+  background-color: white;
   border-bottom: 1px solid $grey-light;
   display: grid;
   grid-template-columns: auto 1fr;

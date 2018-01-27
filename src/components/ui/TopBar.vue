@@ -1,8 +1,5 @@
 <template>
   <div class="topbar-wrapper">
-    <div class="topbar-title">
-      <h1>_graph TV</h1>
-    </div>
     <div class="topbar-search">
       <input
         type="text"
@@ -38,6 +35,9 @@
           <button class="button wide" @click="clearSearchQuery">close</button>
         </div>
       </div>
+    </div>
+    <div class="topbar-title">
+      <h1>_graph TV</h1>
     </div>
   </div>
 </template>
