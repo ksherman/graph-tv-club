@@ -1,35 +1,35 @@
 <script>
-import { Scatter } from 'vue-chartjs';
+import { Line } from 'vue-chartjs';
 
 export default {
   name: 'ShowScatterPlot',
-  extends: Scatter,
+  extends: Line,
   props: ['episodeDataset'],
-  components: {
-    Scatter,
-  },
   mounted() {
     this.renderChart(
       {
-        datasets: [this.episodeDataset],
+        labels: this.episodeDataset[0].data.map((_, index) => index + 1),
+        datasets: this.episodeDataset,
       },
       {
         responsive: true,
         legend: { display: false },
         layout: {
-          padding: 10,
+          padding: {
+            right: 10,
+          },
         },
         title: {
           display: true,
           position: 'bottom',
-          text: this.episodeDataset.label,
+          text: this.episodeDataset[0].label,
         },
         scales: {
           xAxes: [
             {
               display: false,
               ticks: {
-                max: this.episodeDataset.data.length + 1,
+                max: this.episodeDataset[0].data.length + 1,
               },
             },
           ],
