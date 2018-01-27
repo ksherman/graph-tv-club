@@ -12,6 +12,8 @@ export const runSearch = ({ state, commit }, searchQuery) => {
     method: 'GET',
   };
   const request = new Request(url, reqOptions);
+  window.gtag('event', 'omdb_api', { method: 'runSearch', request_url: url });
+
   fetch(request)
     .then(res => res.json())
     .then(json => {
@@ -30,6 +32,8 @@ export const runShowDetailFetch = ({ state, commit, dispatch }, imdbID) => {
     method: 'GET',
   };
   const request = new Request(url, reqOptions);
+  window.gtag('event', 'omdb_api', { method: 'runShowDetailFetch', request_url: url });
+
   fetch(request)
     .then(res => res.json())
     .then(json => {
@@ -51,6 +55,8 @@ export const runShowSeasonFetch = ({ state, commit }, { imdbID, seasonNumber }) 
     method: 'GET',
   };
   const request = new Request(url, reqOptions);
+  window.gtag('event', 'omdb_api', { method: 'runShowSeasonFetch', request_url: url });
+
   fetch(request)
     .then(res => res.json())
     .then(json => {
