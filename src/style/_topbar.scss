@@ -47,7 +47,7 @@
 
       &.visible {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       }
 
       .no-result {
@@ -75,7 +75,7 @@
 
   &-image {
     img {
-      width: 180px;
+      width: 100px;
     }
   }
 
@@ -84,11 +84,11 @@
   }
 
   &-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   &-year {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   &-view {

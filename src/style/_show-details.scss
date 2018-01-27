@@ -1,0 +1,43 @@
+.show {
+  &-wrapper {
+    padding: 2rem;
+  }
+
+  &-title {
+    font-weight: 800;
+
+    .year {
+      display: inline-block;
+      padding-left: 1rem;
+      font-size: 0.8em;
+      color: $grey-medium;
+      font-weight: 600;
+    }
+  }
+
+  &-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 2.5rem;
+
+    .poster {
+      img {
+        width: 20rem;
+      }
+    }
+
+    .information {
+      &-line {
+        padding-bottom: 0.7rem;
+      }
+    }
+  }
+
+  &-season {
+    &-charts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      grid-gap: 2rem;
+    }
+  }
+}
