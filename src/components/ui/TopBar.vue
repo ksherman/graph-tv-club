@@ -28,18 +28,13 @@
               <div class="result-title">{{ show.Title }}</div>
               <div class="result-year">{{ show.Year }}</div>
               <div class="result-view">
-                <router-link
-                  tag="button"
-                  class="button"
-                  :to="{ name: 'show.details', params: { showId: show.imdbID } }">
-                  View Show
-                </router-link>
+                <button class="button" @click="handleShowChange(show.imdbID)">View Show</button>
               </div>
             </div>
           </div>
         </template>
         <div class="results-actions text-right">
-          <button class="button wide">close</button>
+          <button class="button wide" @click="clearSearchQuery">close</button>
         </div>
       </div>
     </div>
@@ -63,7 +58,11 @@ export default {
     ...mapGetters(['getSearchError', 'getSearchResults']),
   },
   methods: {
-    ...mapActions(['setSearchQuery']),
+    ...mapActions(['setSearchQuery', 'clearSearchQuery']),
+    handleShowChange(showId) {
+      this.clearSearchQuery();
+      this.$router.push({ name: 'show.details', params: { showId } });
+    },
     handleSearchQuery() {
       this.setSearchQuery(this.searchQuery).then(response => console.log(response));
     },

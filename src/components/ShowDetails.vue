@@ -28,8 +28,8 @@
     <div class="show-season-charts" v-if="getShowDataForScatterplot.length === Number(getShowDetails.totalSeasons)">
       <div
         class="season-chart"
-        :key="`${getShowDetails.imdbID}-season-${dataset.label}`"
-        v-for="dataset in getShowDataForScatterplot"
+        :key="`${getShowDetails.imdbID}-season-${index + 1}`"
+        v-for="(dataset, index) in getShowDataForScatterplot"
       >
         <show-scatter-plot :episodeDataset="dataset" />
       </div>
@@ -55,8 +55,9 @@ export default {
     ...mapGetters(['getShowDetails', 'getShowSeasons', 'getShowDataForScatterplot']),
   },
   methods: {
-    ...mapActions(['runShowDetailFetch']),
+    ...mapActions(['runShowDetailFetch', 'clearShowDetails']),
     fetchData() {
+      this.clearShowDetails();
       this.runShowDetailFetch(this.$route.params.showId);
     },
   },

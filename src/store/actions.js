@@ -2,6 +2,10 @@ export const setSearchQuery = ({ dispatch }, searchQuery) => {
   dispatch('runSearch', searchQuery);
 };
 
+export const clearSearchQuery = ({ commit }) => {
+  commit('clearSearchQuery');
+};
+
 export const runSearch = ({ state, commit }, searchQuery) => {
   const url = `${state.omdbUrlPrefix}&type=series&s=${searchQuery}`;
   const reqOptions = {
@@ -10,7 +14,7 @@ export const runSearch = ({ state, commit }, searchQuery) => {
   const request = new Request(url, reqOptions);
   fetch(request)
     .then(res => res.json())
-    .then((json) => {
+    .then(json => {
       if (json.Response === 'False') {
         commit('setSearchError', json.Error);
       } else if (json.Response === 'True') {
@@ -28,7 +32,7 @@ export const runShowDetailFetch = ({ state, commit, dispatch }, imdbID) => {
   const request = new Request(url, reqOptions);
   fetch(request)
     .then(res => res.json())
-    .then((json) => {
+    .then(json => {
       commit('setShowDetails', json);
       // if show has seasons, fetch them
       const seasons = Number(json.totalSeasons);
@@ -49,8 +53,12 @@ export const runShowSeasonFetch = ({ state, commit }, { imdbID, seasonNumber }) 
   const request = new Request(url, reqOptions);
   fetch(request)
     .then(res => res.json())
-    .then((json) => {
+    .then(json => {
       commit('setShowSeason', json);
     })
     .catch(error => console.error(error));
+};
+
+export const clearShowDetails = ({ commit }) => {
+  commit('clearShowDetails');
 };

@@ -3,6 +3,13 @@ export default {
   setSearchQuery(state, payload) {
     state.search.query = payload;
   },
+  clearSearchQuery(state) {
+    state.search = {
+      query: '',
+      results: '',
+      error: '',
+    };
+  },
   setSearchError(state, payload) {
     state.search.error = payload;
   },
@@ -16,5 +23,11 @@ export default {
     const seasons = state.show.seasons;
     seasons.push(payload);
     state.show.seasons = seasons;
+  },
+  clearShowDetails(state) {
+    state.show = {
+      details: {},
+      seasons: [],
+    };
   },
 };
