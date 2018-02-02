@@ -12,7 +12,8 @@ export const runSearch = ({ state, commit }, searchQuery) => {
     method: 'GET',
   };
   const request = new Request(url, reqOptions);
-  window.gtag('event', 'omdb_api', { method: 'runSearch', request_url: url });
+
+  window.gtag('event', url, { event_category: 'omdb_api', event_label: 'runSearch' });
 
   fetch(request)
     .then(res => res.json())
@@ -32,7 +33,7 @@ export const runShowDetailFetch = ({ state, commit, dispatch }, imdbID) => {
     method: 'GET',
   };
   const request = new Request(url, reqOptions);
-  window.gtag('event', 'omdb_api', { method: 'runShowDetailFetch', request_url: url });
+  window.gtag('event', url, { event_category: 'omdb_api', event_label: 'runShowDetailFetch' });
 
   fetch(request)
     .then(res => res.json())
@@ -55,7 +56,7 @@ export const runShowSeasonFetch = ({ state, commit }, { imdbID, seasonNumber }) 
     method: 'GET',
   };
   const request = new Request(url, reqOptions);
-  window.gtag('event', 'omdb_api', { method: 'runShowSeasonFetch', request_url: url });
+  window.gtag('event', url, { event_category: 'omdb_api', event_label: 'runShowSeasonFetch' });
 
   fetch(request)
     .then(res => res.json())
