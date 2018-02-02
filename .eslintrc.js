@@ -58,7 +58,7 @@ module.exports = {
     'no-console': 'off',
     'arrow-parens': 'off',
     'max-len': [
-      'error',
+      'warn',
       {
         code: 120,
       },

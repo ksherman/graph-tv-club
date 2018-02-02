@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="topbar-title">
-      <router-link tag="h1" :to="{ name: 'main' }">_graph TV</router-link>
+      <router-link tag="h1" :to="{ name: 'main' }">TV_Viz</router-link>
     </div>
   </div>
 </template>
