@@ -5,6 +5,7 @@
     align-items: center;
     grid-gap: 2rem;
     background-color: $grey-dark;
+    height: 6rem;
   }
 
   &-title {
@@ -44,7 +45,7 @@
       display: none;
       background-color: white;
       position: absolute;
-      width: 100%;
+      width: 90vw;
       padding: 1rem;
       border: solid 3px $grey-light;
       border-top: none;

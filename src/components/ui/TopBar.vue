@@ -62,7 +62,7 @@ export default {
       this.$router.push({ name: 'show.details', params: { showId } });
     },
     handleSearchQuery() {
-      this.setSearchQuery(this.searchQuery).then(response => console.log(response));
+      this.setSearchQuery(this.searchQuery);
     },
   },
 };

@@ -1,0 +1,49 @@
+.sidebar {
+  &-wrapper {
+    width: 20vw;
+    max-width: 30rem;
+    min-width: 20rem;
+    padding: 2rem;
+    height: calc(100vh - 6rem);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    &.left-side {
+      border-right: 2rem solid $grey-light;
+    }
+  }
+}
+
+.showdetails {
+  &-title {
+    font-weight: 800;
+    padding-bottom: 1rem;
+
+    h2 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .year {
+      font-size: 1.5em;
+      color: $grey-medium;
+      font-weight: 600;
+    }
+  }
+
+  &-details {
+    .poster {
+      img {
+        padding: 1.5rem 0;
+        width: 100%;
+      }
+    }
+
+    .information {
+      &-line {
+        font-size: 1.6rem;
+        padding-bottom: 0.7rem;
+      }
+    }
+  }
+}

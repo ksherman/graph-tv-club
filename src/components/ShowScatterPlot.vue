@@ -24,6 +24,25 @@ export default {
           position: 'bottom',
           text: this.episodeDataset[0].label,
         },
+        tooltips: {
+          callbacks: {
+            title: (tooltipItem, data) => `Episode ${data.labels[tooltipItem[0].index]}`,
+            label: (tooltipItem, data) => `Score ${data.datasets[0].data[tooltipItem.index]}`,
+          },
+          bodyFontFamily: 'inherit',
+          bodyFontSize: 16,
+          xPadding: 16,
+          yPadding: 14,
+          cornerRadius: 0,
+          titleFontSize: 18,
+          titleFontStyle: 'normal',
+          titleMarginBottom: 12,
+        },
+        elements: {
+          line: {
+            tension: 0,
+          },
+        },
         scales: {
           xAxes: [
             {

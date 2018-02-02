@@ -1,14 +1,18 @@
 <template>
   <div class="showpage-wrapper" v-if="getShowDetails.Title">
     <ShowDetailSidebar />
-    <h2>Season Ratings:</h2>
-    <div class="show-season-charts" v-if="getShowDataForScatterplot.length === Number(getShowDetails.totalSeasons)">
+    <div class="showpage-content">
+      <h2>Season Graphs</h2>
       <div
-        class="season-chart"
-        :key="`${getShowDetails.imdbID}-season-${index + 1}`"
-        v-for="(dataset, index) in getShowDataForScatterplot"
-      >
-        <show-scatter-plot :episodeDataset="dataset" />
+        class="showpage-season-charts"
+        v-if="getShowDataForScatterplot.length === Number(getShowDetails.totalSeasons)">
+        <div
+          class="season-chart"
+          :key="`${getShowDetails.imdbID}-season-${index + 1}`"
+          v-for="(dataset, index) in getShowDataForScatterplot"
+        >
+          <show-scatter-plot :episodeDataset="dataset" />
+        </div>
       </div>
     </div>
   </div>

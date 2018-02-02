@@ -1,10 +1,10 @@
 <template>
   <div class="sidebar-wrapper left-side">
-    <h2 class="showpage-title">
-      {{ getShowDetails.Title }}
-      <span class="year">{{ getShowDetails.Year }}</span>
-    </h2>
-    <div class="showpage-details">
+    <div class="showdetails-title">
+      <h2>{{ getShowDetails.Title }}</h2>
+      <div class="year">{{ getShowDetails.Year }}</div>
+    </div>
+    <div class="showdetails-details">
       <div class="poster">
         <img :src="getShowDetails.Poster" />
       </div>

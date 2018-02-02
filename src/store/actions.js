@@ -61,7 +61,9 @@ export const runShowSeasonFetch = ({ state, commit }, { imdbID, seasonNumber }) 
   fetch(request)
     .then(res => res.json())
     .then(json => {
-      commit('setShowSeason', json);
+      if (json.Response === 'True') {
+        commit('setShowSeason', json);
+      }
     })
     .catch(error => console.error(error));
 };

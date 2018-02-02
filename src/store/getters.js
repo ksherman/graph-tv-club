@@ -57,6 +57,7 @@ export const getShowDataForScatterplot = ({ show }) => {
   if (show.seasons.length > 0) {
     const orderedSeasons = orderBy(show.seasons, [season => Number(season.Season)], ['asc']);
     return orderedSeasons.map(season => {
+      console.log(season);
       const episodeData = season.Episodes.map(episode => Number(episode.imdbRating));
       const episodeDataForLinearRegression = season.Episodes.map((episode, index) => {
         const data = [index + 1, Number(episode.imdbRating)];
@@ -72,6 +73,8 @@ export const getShowDataForScatterplot = ({ show }) => {
           backgroundColor: color,
           data: episodeData,
           showLine: false,
+          pointRadius: 6,
+          pointHoverRadius: 8,
         },
         {
           data: episodeDataTrend,
