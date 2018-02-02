@@ -1,29 +1,6 @@
 <template>
-  <div class="show-wrapper" v-if="getShowDetails.Title">
-    <h2 class="show-title">
-      {{ getShowDetails.Title }}
-      <span class="year">{{ getShowDetails.Year }}</span>
-    </h2>
-    <div class="show-details">
-      <div class="poster">
-        <img :src="getShowDetails.Poster" />
-      </div>
-      <div class="information">
-        <div class="information-line">
-          <strong>Plot:</strong> {{ getShowDetails.Plot }}
-        </div>
-        <div class="information-line">
-          <strong>Typical runtime:</strong> {{ getShowDetails.Runtime }}
-        </div>
-        <div class="information-line">
-          <strong>Overall score:</strong>
-          {{ getShowDetails.Ratings[0].Value }}
-          <span class="text-medium">
-            {{ getShowDetails.Ratings[0].Source }} from {{ getShowDetails.imdbVotes }} votes
-          </span>
-        </div>
-      </div>
-    </div>
+  <div class="showpage-wrapper" v-if="getShowDetails.Title">
+    <ShowDetailSidebar />
     <h2>Season Ratings:</h2>
     <div class="show-season-charts" v-if="getShowDataForScatterplot.length === Number(getShowDetails.totalSeasons)">
       <div
@@ -38,13 +15,14 @@
 </template>
 
 <script>
-import { ShowScatterPlot } from '@/components/registry';
+import { ShowScatterPlot, ShowDetailSidebar } from '@/components/registry';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
-  name: 'ShowDetails',
+  name: 'ShowPage',
   components: {
     ShowScatterPlot,
+    ShowDetailSidebar,
   },
   created() {
     if (!this.getShowDetails.Title) {

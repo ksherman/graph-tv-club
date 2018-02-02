@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { MainContent, ShowDetails } from '@/components/registry';
+import { MainContent, ShowPage } from '@/components/registry';
 
 Vue.use(Router);
 
@@ -13,7 +13,7 @@ export default new Router({
     },
     {
       path: '/show/:showId',
-      component: ShowDetails,
+      component: ShowPage,
       name: 'show.details',
     },
   ],
