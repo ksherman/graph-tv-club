@@ -5,7 +5,7 @@
 export const TopBar = r => require.ensure([], () => r(require('@/components/ui/TopBar')), 'TopBar');
 
 // Content components
-export const MainContent = r => require.ensure([], () => r(require('@/components/MainContent')), 'MainContent');
+export const WelcomePage = r => require.ensure([], () => r(require('@/components/WelcomePage')), 'WelcomePage');
 
 export const ShowPage = r => require.ensure([], () => r(require('@/components/ShowPage')), 'ShowPage');
 export const ShowScatterPlot = r =>

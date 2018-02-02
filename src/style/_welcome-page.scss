@@ -1,0 +1,22 @@
+.welcome {
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &-content {
+    border: 1px solid $grey-light;
+    padding: 4rem;
+    min-width: 320px;
+    max-width: 60vw;
+
+    h2 {
+      margin: 0;
+      font-weight: 300;
+      font-size: 4rem;
+    }
+  }
+}
